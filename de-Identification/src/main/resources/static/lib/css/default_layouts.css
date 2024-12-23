@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-grow: 2;
+}
+.side-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+.side-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    min-height: 100%;
+    background: #eeeaea;
+}
+.side-content {
+    min-width: 1080px;
+    padding-left: 200px;
+
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav_div{
+    display: flex;
+    justify-content: space-between;
+
+}
+.logo_img{
+    padding: 20px;
+    width: 200px;
+    height: auto;
+}
+
+.main-img-container {
+    position: relative;
+    width: 100%;
+}
+
+.main-img-container img {
+    width: 100%;
+    height: 65%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65%;
+    background-color: rgba(0, 0, 0, 0.55); /* 검정색 배경에 10%의 투명도 적용 */
+    z-index: 1; /* 이미지 위에 위치하도록 설정 */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: white;
+}
+
+.header-1 {
+    font-size: 23px;
+    padding-bottom: 5px;
+    color: #c6e0ee;
+}
+
+.header-2 {
+    font-size: 45px;
+    color: #ffffff;
+    padding-bottom: 15px;
+}
+
+.text-1 {
+    white-space: pre-line;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.text-2 {
+    white-space: pre-line;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.navbar{
+    align-items: baseline;
+    padding: 30px 80px;
+    font-size: 25px;
+}
+.navbar_list {
+    list-style: none;
+    display: flex;
+    margin: 0px;
+    padding-left: 0px;
+}
+.navbar_list li {
+    padding: 8px 30px;
+}
+
+.navbar_list li:after {
+    display: block;
+    content: '';
+    border-bottom: solid 3px coral;
+    transform: scaleX(0);
+    transition: transform 150ms ease-in-out;
+}
+
+.navbar_list li:hover:after {
+    transform: scaleX(1);
+}
+
+footer {
+    width: 100%;
+    background-color: #333;
+    font-size: 13px;
+    text-align: right;
+
+    color: #797878;
+}
+.footer_head{
+    color: #eee;
+    padding-bottom: 10px;
+}
+
+.footer_p{
+
+    padding-bottom: 3px;
+}
+.footer_grid-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    border-bottom: 2px solid #797878;
+}
+#footer_grid-item{
+    justify-self: end;
+}
+
+.top{
+    width: 230px;
+    border-bottom: 2px solid #797878;
+    padding-bottom: 5px;
+}
+.bot{
+    padding-bottom: 5px;
+}
+.f_bot{
+    padding-top: 10px;
+}
+

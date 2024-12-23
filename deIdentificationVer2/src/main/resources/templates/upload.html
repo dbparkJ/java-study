@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>Upload File Name</h1>
+<!--input의 id name값은 백엔드 파라미터 값과 매칭할때 쓰인다-->
+<!--<form method="post" action="/files/upload">-->
+<!--    <label>File Name:</label>-->
+<!--    <input type="text"  name="filename" required>-->
+<!--    <br>-->
+<!--    <label for="filepath">File Path:</label>-->
+<!--    <input type="text" id="filepath" name="filepath" required>-->
+<!--    <br>-->
+<!--    <input type="submit" value="Upload">-->
+<!--</form>-->
+
+<div class="upload-container">
+    <form th:action="@{/files/upload}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <input type="submit" value="업로드" />
+    </form>
+    <div>
+        <p th:if="${upload_message}" th:text="${upload_message}"></p>
+    </div>
+</div>
+
+</body>
+</html>

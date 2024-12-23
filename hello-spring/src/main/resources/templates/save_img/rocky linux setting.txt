@@ -1,0 +1,48 @@
+Rocky Linux 9.2 기본 설정
+
+ssh 서버 설정 방법 : https://derveljunit.tistory.com/348
+공유기 ip 고정방법 : 
+포트포워딩 방법 :
+디스크 마운트 방법 : http://www.gisdeveloper.co.kr/?p=12454
+
+chmod -R 777 마운트위치
+
+비프음 삭제 방법 : https://sybd.tistory.com/138
+
+
+lspci 설치 : yum install pciutils
+
+
+nvidia driver 설치 방법 : https://jandari91.github.io/posts/nvidia/
+# Nvidia 설정 
+cuda 설치 : https://developer.nvidia.com/cuda-11-8-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Rocky&target_version=9&target_type=rpm_local
+cuda path 및 cudnn : https://jandari91.github.io/posts/cuda/
+
+스왑메모리 설정 변경 : sudo sysctl vm.swappiness=10 #기본 60임
+
+# jenkins 설치
+https://ko.linux-console.net/?p=3614
+
+# mysql 설치
+sudo dnf update
+
+sudo dnf install mysql-server
+
+sudo systemctl start mysqld
+## mysql 부팅시 자동 시작
+sudo systemctl enable mysqld
+
+## 초기 보안 설정
+sudo mysql_secure_installation
+비밀번호 : Qkrwhdals1@
+
+## mysql로 진입
+mysql -u root -p
+
+## 데이터베이스 확인
+SHOW DATABASES;
+USE mydatabase;
+SHOW TABLES;
+
+mysql
+유저 - 데이터베이스 - 테이블

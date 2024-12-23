@@ -1,0 +1,4 @@
+hoverEnabled :true
+            onMouseXChanged: {
+                moveUnscaledRoiTo(mouseX, mouseY)
+            }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>파일 업로드 예제</title>
+</head>
+<body>
+<h1>파일 업로드 예제</h1>
+
+<!-- 파일 업로드 폼 -->
+<form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" />
+    <input type="submit" value="업로드" />
+</form>
+
+<!-- 업로드 결과 메시지 표시 -->
+<p th:if="${message}" th:text="${message}"></p>
+
+<!-- 업로드된 파일 목록 표시 -->
+<h2>업로드된 파일 목록</h2>
+<ul>
+    <li th:each="fileInfo : ${fileInfoList}" style="width: 200px; height: auto;">
+        <span th:text="${fileInfo.name}"></span>
+        <img th:src="@{|/upload/${fileInfo.name}}" style="max-width: 100%; max-height: 100%;"/>
+
+    </li>
+</ul>
+</body>
+</html>

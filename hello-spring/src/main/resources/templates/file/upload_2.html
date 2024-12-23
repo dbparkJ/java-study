@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/upload_2.css}">
+    <title>Widget #3 - Skeleton Loading Animation | AsmrProg</title>
+</head>
+
+<body>
+<button id="toggle"></button>
+
+<div class="upload-container">
+    <form th:action="@{/upload_2}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <input type="submit" value="업로드" />
+    </form>
+    <div>
+        <p th:if="${upload_message}" th:text="${upload_message}"></p>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <div th:each="fileInfo : ${fileInfoList}" class="card">
+            <div class="card-image loading">
+                <img th:src="@{|/upload/upload/${fileInfo.name}}">
+            </div>
+            <a href="/predictView" class="card-header loading">
+                <p th:text="${fileInfo.name}" class="card-info loading"></p>
+            </a>
+            <p th:text="${fileInfo.name}" class="card-info loading"></p>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/upload_2.js"></script>
+</body>
+
+</html>
